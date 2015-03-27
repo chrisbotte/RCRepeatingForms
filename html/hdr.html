@@ -1,0 +1,33 @@
+<!-- TEMPLATE PAGE USED TO LOAD .css, .js files, as well as custom jquery code -->
+
+<link rel="stylesheet" type="text/css" href="http://www.datatables.net/release-datatables/media/css/jquery.dataTables.css">
+<link rel="stylesheet" type="text/css" href="http://www.datatables.net/release-datatables/extensions/ColVis/css/dataTables.colVis.css">
+
+<script type="text/javascript" src="http://www.datatables.net/release-datatables/media/js/jquery.dataTables.js"></script>
+<script type="text/javascript" src="http://www.datatables.net/release-datatables/extensions/ColVis/js/dataTables.colVis.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#colvis').DataTable( {    "dom":'TC<"clear">lfrtip',
+         "aoColumnDefs": [{ "bVisible": false ,"aTargets": [  ] }],
+         "colVis": {
+            "label": function ( index, title, th ) {
+                return (index+1) +'. '+ title;
+            },
+            "align":"right",
+            "showAll": "Show all",
+            "showNone": "Show none",
+            "restore": "Revert to original visibility" 
+          }
+    }); 
+});
+
+</script>
+
+<style type="text/css">
+  ul.ColVis_collection{
+    width:auto;
+    font-size: 18px;
+  }
+
+</style>

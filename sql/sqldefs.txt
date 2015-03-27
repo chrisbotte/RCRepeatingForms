@@ -1,0 +1,36 @@
+CREATE DATABASE `rf` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+use `rf`;
+
+CREATE TABLE `rf_config` (
+  `project_id` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `form_name` varchar(1000) COLLATE utf8_unicode_ci NOT NULL,
+  `pkey` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`pkey`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+CREATE TABLE `rf_data` (
+  `project_id` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `record` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `instrument` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `event_id` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `iteration` int(11) DEFAULT NULL,
+  `field_name` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `value` varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `field_type` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `root_name` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pkey` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`pkey`)
+) ENGINE=InnoDB AUTO_INCREMENT=3624 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+
+CREATE TABLE `rf_edits` (
+  `pid` int(11) DEFAULT NULL,
+  `record` varchar(300) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `curr_it` int(11) DEFAULT NULL,
+  `instr` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `event` int(11) DEFAULT NULL,
+  `pkey` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`pkey`)
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
